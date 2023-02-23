@@ -1,0 +1,100 @@
+<!DOCTYPEhtml>
+<htmllang="en">
+<head>
+<metacharset="UTF-8">
+<title>info</title>
+<link rel='stylesheet'href='./css/bootstrap.min.css'>
+<link rel="stylesheet"href="./css/style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script></style>
+</head>
+<body>
+<div class="wrapper">
+<form name="iform"class="form-signin">
+<h2 class="form-signin-heading"">Please input your contact</h2>
+<input type="text"class="form-
+control"name="name"id="name"placeholder="Name(NeoAnderson)"required="true">
+<input
+type="text"class="form-
+control"name="company"id="company"placeholder="CompanyName(Google)"requir
+ed="required">
+<input
+type="text"class="form-
+control"name="position"id="position"placeholder="Position(Engineer)"required="requ
+ired">
+<input
+type="tel"class="form-
+control"name="cellphone"id="cellphone"placeholder="Cellphone(15678349348)"requi
+red="required">
+<input
+type="email"class="form-
+control"name="email"id="email"placeholder="Email(neoanderson@gmail.com)"requir
+ed="required">
+<span class="radio"><input type="radio"name="version"value="sv">short versi
+on</span>
+<span class="radio"><input type="radio"name="version"value="lv">long version</span>
+<span class="key"style="color:red;"><input type="radio"name=""value="pri">I
+agree to use my cookies under GDPR</span>
+<button type="button"class="btnbtn-lgbtn-primarybtn-
+block"onclick="showForm()"name="sub_btn">submit</button>
+
+<a class="key"href="key_features.pdf"><button type="button"class="btnbtn-lgbtn-
+dangerbtn-block">key_features</button></a>
+</form>
+</div>
+<script>
+var f=iform;
+var id=local Storage.length+1
+console.log("local size:"+id)
+function showForm(){
+var val=$("input[type='radio']:checked").val();
+console.log(val)
+console.log(val!=="sv"&&val!=="lv")
+var info = [
+{"id":id},
+{"name":f.name.value},
+{"company":f.company.value},
+{"position":f.position.value},
+{"cellphone":f.cellphone.value},
+{"email":f.email.value},
+{"version":f.version.value}
+]
+console.log(info)
+var n_reg=/^[a-zA-Z0-9-]{4,16}$/;
+var pos_reg=/^[a-zA-Z0-9-]{2,12}$/;
+var p_reg=/^[0-9-]{4,11}$/;
+var e_reg=/^([A-Za-z0-9-_.])+@([A-Za-z0-9-_.])+.([A-Za-z]{2,4})$/;
+if(!n_reg.test(document.getElementById("name").value)){
+alert("Enter the name!")
+}else if(!n_reg.test(document.getElementById("company").value)){
+alert("Enter the company name!")
+}else if(!pos_reg.test(document.getElementById("position").value)){
+alert("Enter the postion info!")
+}else if(!p_reg.test(document.getElementById('cell phone').value)){
+alert("Enter the phone number")
+}else if(!e_reg.test(document.getElementById("email").value)){
+alert("Enter the email address and Enter the correct format!")
+}else if(val!=="sv"&&val!=="lv"){
+alert("youdidntselecttheCVversion")
+}else{
+if(f.version.value==="sv"){
+location.href='sv_web_form.html'
+}else if(f.version.value==="lv"){
+location.href='lv_web_form.html'
+}else{
+location.href='cv_requested.html'
+}
+window.session Storage.setItem("com Show",true)
+local Storage.setItem("info"+id,JSON.stringify(info))
+document.cookie="name="+"info1"+"value="+f.name.value
+}
+}
+</script>
+<script>
+$(function(){
+$("#c_link").click(function(){
+alert("your esupposed to fill the form below at first!")
+})
+});
+</script>
+</body>
+</html>

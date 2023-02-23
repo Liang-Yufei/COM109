@@ -1,0 +1,75 @@
+<!DOCTYPEhtml>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"content="width=device-width,initial-scale=1.0">
+<title>Welcome</title>
+<link rel='stylesheet'href='./css/bootstrap.min.css'>
+<link rel="stylesheet"href="./css/style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<style>
+body{
+background:url(./images/background.jpg)no-repeat!important;
+background-size:contain;
+background-position:center;
+}
+.wrapper{
+margin-top:8%!important;
+}
+ul{
+padding:0;
+background:#FFF;
+padding:20px;
+text-align:center;
+}
+li{
+list-style:none;
+display:inline-block;
+margin:0100px;
+}
+
+</style>
+<body>
+<div class="container" >
+<div class="wrapper">
+<ul>
+<li id="drag">
+<a href="web_form1.html">
+<img src="./images/jiantou.png"alt="ContactionTable" href="./web_form">
+<p>web_form.html</p>
+<span>DragMe!</span>
+</a>
+</li>
+<li id="drag">
+<a href="report.docx">
+<img src="./images/pdf.png"alt="keyFeatures">
+<p>KeyFeatures</p>
+<span>DragMe!</span>
+</a>
+</li>
+<li id="drag">
+<a href="cv_request.html">
+<img src="./images/pdf.png"alt="keyFeatures">
+<p>CV Request</p>
+<span>DragMe!</span>
+<li id="drag">
+<a href="cv.html">
+<img src="./images/lite.png"alt="keyFeatures">
+<p>LYF_CVlong</p>
+<span>DragMe!</span>
+</a>
+</li>
+</a>
+</li>
+</ul>
+</div>
+</div>
+<script>
+$("#draga").draggable({
+/*containment:"#drag"*/
+});
+$("#datepicker").datepicker();
+</script>
+</body>
+</html>
